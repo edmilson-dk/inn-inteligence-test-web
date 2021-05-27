@@ -1,8 +1,11 @@
+import { CustomThemeProvider } from "./styles";
+import { GlobalsStyles } from "./styles/globals";
+
 function App() {
   return (
-    <div>
-      Home
-    </div>
+    <CustomThemeProvider>
+      <GlobalsStyles />
+    </CustomThemeProvider>
   );
 }
 
