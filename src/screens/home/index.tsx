@@ -1,9 +1,10 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { FiSearch, FiStar } from "react-icons/fi";
 
 import { ButtonRedirect } from "src/components/button-redirect";
 import { Loading } from "src/components/loading";
 import { MovieDataPaginate } from "src/components/movie-data-paginate";
+import { MovieFilterData } from "src/components/movie-filter-data";
 import { MovieInfosModal } from "src/components/movie-infos-modal";
 import { MoviePreviewCard } from "src/components/movie-preview-card";
 import { useMovieContext } from "src/contexts/movie-context";
@@ -26,20 +27,31 @@ export function Home() {
   } = useMovieContext();
   const [actualPage, setActualPage] = useState(1);
   const [type, setType] = useState("movie");
+  const [year, setYear] = useState(0);
 
   async function handlerNextDataClick() {
     const title = searchInputRef.current ? searchInputRef.current.value : "";
     const page = actualPage+1;
-    await searchAllMoviesWithQuery(page, type, title);
+    await searchAllMoviesWithQuery(page, type, title, 0);
     setActualPage(page);
   }
 
   async function handlerPrevDataClick() {
     const title = searchInputRef.current ? searchInputRef.current.value : "";
     const page = actualPage -1;
-    await searchAllMoviesWithQuery(page, type, title);
+    await searchAllMoviesWithQuery(page, type, title, 0);
     setActualPage(page);
   }
+
+  useEffect(() => {
+    (async () => {
+      if (searchInputRef.current && searchInputRef.current.value) {
+        const title = searchInputRef.current.value;
+        await searchAllMoviesWithQuery(actualPage, type, title, year);
+      }
+      return;
+    })()
+  }, [type, year])
 
   return (
     <>
@@ -65,6 +77,7 @@ export function Home() {
                 </span>
               </button>
             </form>
+            <MovieFilterData  setMovieType={setType} setMovieYear={setYear}/>
           </HomeContainer>
         </Container>
       </HomeWrapper>
