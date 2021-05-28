@@ -23,6 +23,16 @@ export const GlobalsStyles = createGlobalStyle`
     align-items: center;
   }
 
+  .not-found-movie {
+    position: absolute;
+    top: calc(100vh - 150px);
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #893bc8;
+    font-size: 50px;
+    font-weight: 700;
+  }
+
   .loading {
     width: 100%;
     min-height: 100vh;
