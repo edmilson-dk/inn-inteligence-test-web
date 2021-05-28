@@ -1,13 +1,13 @@
 import { FiStar } from "react-icons/fi";
 
-import { MoviePreviewCardProps } from "./types";
 import BannerNotFoundPng from "src/assets/banner-notfound.png";
+import { MoviePreviewCardProps } from "./types";
 import { MoviePreviewCardContent, MoviePreviewCardWrapper } from "src/styles/components/movie-preview-card";
 
-export function MoviePreviewCard({ data }: MoviePreviewCardProps) {
+export function MoviePreviewCard({ data, displayInfosClick }: MoviePreviewCardProps) {
   return (
     <MoviePreviewCardWrapper>
-      <header>
+      <header onClick={() => displayInfosClick(data.id)}>
         <img 
           src={data.poster === "N/A" ? BannerNotFoundPng : data.poster} 
           alt={data.poster === "N/A" ? "https://br.freepik.com/vetores/abstrato" : "Movie banner"}
@@ -15,7 +15,7 @@ export function MoviePreviewCard({ data }: MoviePreviewCardProps) {
       </header>
 
       <MoviePreviewCardContent>
-        <article>
+        <article onClick={() => displayInfosClick(data.id)}>
           <h3>{data.title}</h3>
           <span>Type: {data.type[0].toUpperCase() + data.type.substr(1)}</span>
           <time>Year: {data.year}</time>
