@@ -35,7 +35,7 @@ export function MovieContextProvider({ children }: MovieContextProviderProps) {
     setMoviesDataInfos(response.data);
   }
 
-  async function searchAllMoviesWithQuery(page: number, type: string, title: string) {
+  async function searchAllMoviesWithQuery(page: number, type: string, title: string, year = 0) {
     try {
       if (title && title.length >= 2) {
         setIsLoading(true);
@@ -45,7 +45,7 @@ export function MovieContextProvider({ children }: MovieContextProviderProps) {
           {
             params: { 
               title: title.trimEnd().trimStart(),
-              page, type,
+              page, type, year
             },
           }
         );
