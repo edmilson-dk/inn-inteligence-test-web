@@ -4,7 +4,7 @@ import { MovieInfosDataApiResponse, MoviePreviewData, MoviePreviewDataApiRespons
 export type MovieContextProps = {
   handleSearchAllMovies: (e: FormEvent) => void;
   handleCloseModal: () => void;
-  searchAllMoviesWithQuery: (page: number, type: string, title: string) => void;
+  searchAllMoviesWithQuery: (page: number, type: string, title: string, year: number) => void;
   searchInputRef: RefObject<HTMLInputElement>;
   isLoading: boolean;
   isNotFoundMovie: boolean;

@@ -21,6 +21,12 @@ export function MovieContextProvider({ children }: MovieContextProviderProps) {
     setIsOpenModalInfos(false);
   }
 
+  function notFoundMoviePreviewSetStates() {
+    setIsLoading(false);
+    setIsNotFoundMovie(true);
+    setMoviesDataPreview([]);
+  }
+
   async function handleSearchOneMovieInfos(id: string) {
     setIsLoading(true);
     toTopAndAddNotScroll(true, true);
@@ -35,7 +41,7 @@ export function MovieContextProvider({ children }: MovieContextProviderProps) {
     setMoviesDataInfos(response.data);
   }
 
-  async function searchAllMoviesWithQuery(page: number, type: string, title: string, year = 0) {
+  async function searchAllMoviesWithQuery(page: number, type: string, title: string, year: number) {
     try {
       if (title && title.length >= 2) {
         setIsLoading(true);
@@ -54,8 +60,7 @@ export function MovieContextProvider({ children }: MovieContextProviderProps) {
           setIsLoading(false);
           setIsNotFoundMovie(false);
         } else {
-          setIsLoading(false);
-          setIsNotFoundMovie(true);
+          notFoundMoviePreviewSetStates();
           return;
         }
 
@@ -65,8 +70,7 @@ export function MovieContextProvider({ children }: MovieContextProviderProps) {
         alert("The search must have at least two characters");
       }
     } catch(e) {
-      setIsLoading(false);
-      setIsNotFoundMovie(true);
+      notFoundMoviePreviewSetStates();
     }
   }
 
@@ -86,12 +90,10 @@ export function MovieContextProvider({ children }: MovieContextProviderProps) {
         );
         
         if (response.data && response.data.data.length > 0) {
-          setIsLoading(false);
           toTopAndAddNotScroll(false);
-          setIsNotFoundMovie(false);
+          notFoundMoviePreviewSetStates();
         } else {
-          setIsLoading(false);
-          setIsNotFoundMovie(true);
+          notFoundMoviePreviewSetStates();
           return;
         }
 
@@ -101,8 +103,7 @@ export function MovieContextProvider({ children }: MovieContextProviderProps) {
         alert("The search must have at least two characters");
       }
     } catch(e) {
-      setIsLoading(false);
-      setIsNotFoundMovie(true);
+      notFoundMoviePreviewSetStates();
     }
   }
 
