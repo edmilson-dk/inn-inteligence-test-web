@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const ButtonRedirectWrapper = styled.button`
   height: 50px;
   padding: 0 1rem;
-  border-radius: 30px;
+  border-radius: 10px;
   background-color: ${({ theme }) => theme.colors.primary};
   letter-spacing: 1px;
 
