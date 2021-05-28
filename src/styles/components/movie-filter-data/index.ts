@@ -5,7 +5,7 @@ export const MovieFilterDataWrapper = styled.article`
   padding: 1rem;
   border-radius: 10px;
   background-color: transparent;
-  border: 2px solid ${({ theme }) => theme.colors.darkLight};
+  border: 2px solid ${({ theme }) => theme.colors.darkSecond};
   align-self: flex-end;
   margin-top: 20px;
 
