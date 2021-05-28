@@ -1,6 +1,6 @@
-import { MoviePreviewDataApiResponse } from "src/types/api-response-types";
+import { MoviePreviewData } from "src/types/api-response-types";
 
 export type MoviePreviewCardProps = {
-  data: MoviePreviewDataApiResponse;
+  data: MoviePreviewData;
   displayInfosClick: (id: string) => void;
 }

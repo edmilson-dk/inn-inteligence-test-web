@@ -1,7 +1,9 @@
+import { useState } from "react";
 import { FiSearch, FiStar } from "react-icons/fi";
 
 import { ButtonRedirect } from "src/components/button-redirect";
 import { Loading } from "src/components/loading";
+import { MovieDataPaginate } from "src/components/movie-data-paginate";
 import { MovieInfosModal } from "src/components/movie-infos-modal";
 import { MoviePreviewCard } from "src/components/movie-preview-card";
 import { useMovieContext } from "src/contexts/movie-context";
@@ -19,7 +21,25 @@ export function Home() {
     isNotFoundMovie,
     isOpenModalInfos,
     searchInputRef,
+    moviesPreviewTotal,
+    searchAllMoviesWithQuery
   } = useMovieContext();
+  const [actualPage, setActualPage] = useState(1);
+  const [type, setType] = useState("movie");
+
+  async function handlerNextDataClick() {
+    const title = searchInputRef.current ? searchInputRef.current.value : "";
+    const page = actualPage+1;
+    await searchAllMoviesWithQuery(page, type, title);
+    setActualPage(page);
+  }
+
+  async function handlerPrevDataClick() {
+    const title = searchInputRef.current ? searchInputRef.current.value : "";
+    const page = actualPage -1;
+    await searchAllMoviesWithQuery(page, type, title);
+    setActualPage(page);
+  }
 
   return (
     <>
@@ -72,6 +92,16 @@ export function Home() {
               ))
             }
           </HomeContentContainer>
+          {
+            moviesDataPreview.length > 0 && (
+              <MovieDataPaginate 
+                nextCbFetch={handlerNextDataClick}
+                prevCbFetch={handlerPrevDataClick}
+                prevDisabled={actualPage === 1}
+                nextDisabled={actualPage === Math.ceil(moviesPreviewTotal / 10)}
+              />
+            )
+          }
         </Container>
       </HomeContent>
     </>

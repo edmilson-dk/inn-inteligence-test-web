@@ -1,10 +1,18 @@
-export type MoviePreviewDataApiResponse = {
+export type MoviePreviewData = {
   poster: string;
   title: string;
   year: string;
   id: string;
   type: string;
 }
+
+export type MoviePreviewDataApiResponseSuccess = {
+  data: MoviePreviewData[],
+  total: number;
+}
+
+
+export type MoviePreviewDataApiResponse = MoviePreviewDataApiResponseSuccess | null;
 
 export type MovieInfosDataApiResponse = {
   title: string;
