@@ -7,6 +7,17 @@ export const GlobalsStyles = createGlobalStyle`
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    background-color: #;
+  }
+
+  .flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  html {
+    font-size: 100%;
   }
 
   html, input, button {
