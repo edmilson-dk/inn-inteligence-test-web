@@ -1,8 +1,8 @@
 import { FiSearch, FiStar } from "react-icons/fi";
-import { ButtonRedirect } from "../../components/button-redirect";
 
-import { Container } from "../../styles/components/container";
-import { HomeContainer, HomeWrapper } from "../../styles/screens/home";
+import { ButtonRedirect } from "src/components/button-redirect";
+import { Container } from "src/styles/components/container";
+import { HomeContainer, HomeWrapper } from "src/styles/screens/home";
 
 export function Home() {
   return (
