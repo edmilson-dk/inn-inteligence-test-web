@@ -1,7 +1,16 @@
 import { ReactNode } from "react";
 import { ThemeProvider } from "styled-components";
 
-const theme = {};
+const theme = { 
+  colors: {
+    primary: "#3cc83b",
+    second: "#893bc8",
+    dark: "#09010f",
+    darkSecond: "#1c1820",
+    gray100: "#746c7a",
+    gray200: "#524b57",
+  },
+};
 
 type CustomThemeProviderProps = {
   children: ReactNode;
