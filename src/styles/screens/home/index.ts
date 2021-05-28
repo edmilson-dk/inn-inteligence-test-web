@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const HomeWrapper = styled.main`
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
   background-color: ${({ theme }) => theme.colors.dark};
   display: flex;
   justify-content: center;
@@ -51,15 +51,15 @@ export const HomeContainer = styled.section`
   > form input {
     width: calc(100% - 50px);
     height: 50px;
-    border-radius: 30px 0 0 30px;
-    font-size: 18px;
+    border-radius: 10px 0 0 10px;
+    font-size: 1.125rem;
     font-weight: 400;
     padding: 0 1rem;
-    color: ${({ theme }) => theme.colors.gray200};
+    color: ${({ theme }) => theme.colors.gray100};
     background-color: ${({ theme }) => theme.colors.darkSecond};
 
     &::placeholder {
-      color: ${({ theme }) => theme.colors.gray100};
+      color: ${({ theme }) => theme.colors.gray200};
       font-weight: 300;
     }
 
@@ -67,12 +67,18 @@ export const HomeContainer = styled.section`
       border-top: 1px solid ${({ theme }) => theme.colors.second};
       border-left: 1px solid ${({ theme }) => theme.colors.second};
       border-bottom: 1px solid ${({ theme }) => theme.colors.second};
+      background-color: ${({ theme }) => theme.colors.darkSecond};
     }
 
     &:focus ~ button {
       border-top: 1px solid ${({ theme }) => theme.colors.second};
       border-right: 1px solid ${({ theme }) => theme.colors.second};
       border-bottom: 1px solid ${({ theme }) => theme.colors.second};
+      background-color: ${({ theme }) => theme.colors.second};
+
+      > span svg {
+        stroke: ${({ theme }) => theme.colors.white};
+      }
     }
   }
 
@@ -81,8 +87,9 @@ export const HomeContainer = styled.section`
     height: 50px;
     padding-right: 1rem;
     background-color:  ${({ theme }) => theme.colors.darkSecond};
-    border-radius: 0 30px 30px 0;
+    border-radius: 0 10px 10px 0;
     font-size: 0;
+    padding: 0 15px 0 10px;
 
     > span svg {
       width: 30px;
@@ -90,4 +97,22 @@ export const HomeContainer = styled.section`
       stroke: ${({ theme }) => theme.colors.second};
     }
   }
+`;
+
+export const HomeContent = styled.section`
+  width: 100%;
+  padding-bottom: 60px;
+  position: absolute;
+  top: calc(100vh - 100px);
+  min-height: 100vh;
+  background-color: ${({ theme }) => theme.colors.dark};
+  justify-content: center;
+  align-items: center;
+`;
+
+export const HomeContentContainer = styled.article`
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-content: center;
+  grid-gap: 30px;
 `;
