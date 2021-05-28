@@ -103,7 +103,6 @@ export const HomeContent = styled.section`
   width: 100%;
   padding-bottom: 60px;
   position: absolute;
-  top: calc(100vh - 100px);
   min-height: 100vh;
   background-color: ${({ theme }) => theme.colors.dark};
   justify-content: center;
