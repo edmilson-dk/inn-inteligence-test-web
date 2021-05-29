@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { FiCalendar, FiCheck } from "react-icons/fi";
+
 import { MovieFilterDataWrapper } from "src/styles/components/movie-filter-data";
 import { MovieFilterDataProps } from "./types";
 
@@ -13,10 +14,10 @@ export function MovieFilterData({ setMovieType, setMovieYear }: MovieFilterDataP
   }
 
   function handleChangeDate(date: string) {
-    let [ year ] = date.split("-");
+    let [year] = date.split("-");
     const newYear = Number(year) < 1900 || Number(year) > 2025;
 
-    if (newYear) { 
+    if (newYear) {
       year = "0";
     }
 
@@ -28,16 +29,16 @@ export function MovieFilterData({ setMovieType, setMovieYear }: MovieFilterDataP
     <MovieFilterDataWrapper>
       <div id="buttons">
         <button>
-          <span 
+          <span
             onClick={() => handleClick("movie")}
             className={type === "movie" ? "active flex-center" : "flex-center"}
           >
-            <FiCheck size="100%"/>
+            <FiCheck size="100%" />
           </span>
           Movies
         </button>
         <button>
-          <span 
+          <span
             onClick={() => handleClick("series")}
             className={type === "series" ? "active flex-center" : "flex-center"}
           >
@@ -46,7 +47,7 @@ export function MovieFilterData({ setMovieType, setMovieYear }: MovieFilterDataP
           Series
         </button>
         <button >
-          <span 
+          <span
             onClick={() => handleClick("episode")}
             className={type === "episode" ? "active flex-center" : "flex-center"}
           >
@@ -63,12 +64,12 @@ export function MovieFilterData({ setMovieType, setMovieYear }: MovieFilterDataP
           </span>
           {year}
         </label>
-        <input 
+        <input
           min="01/01/1900"
           max="31/12/2025"
-          id="filter-year" 
-          name="year" 
-          type="date" 
+          id="filter-year"
+          name="year"
+          type="date"
           onChange={(e) => handleChangeDate(e.target.value)}
         />
       </div>
