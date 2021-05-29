@@ -1,5 +1,3 @@
-import { FiStar } from "react-icons/fi";
-
 import BannerNotFoundPng from "src/assets/banner-notfound.png";
 import { MoviePreviewCardProps } from "./types";
 import { MoviePreviewCardContent, MoviePreviewCardWrapper } from "src/styles/components/movie-preview-card";

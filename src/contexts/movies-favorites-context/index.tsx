@@ -1,4 +1,5 @@
 import { createContext, useContext, useState } from "react";
+
 import { axiosFetchApi } from "src/services/fetch-api";
 import { MovieInfosDataApiResponse, MoviesFavoritesAllDataResponse } from "src/types/api-response-types";
 import { toTopAndAddNotScroll } from "src/utils/toTopAndAddNotScroll";
@@ -81,7 +82,7 @@ export function MoviesFavoritesContextProvider({ children }: MoviesFavoritesCont
 
   async function addMovieInFavorites(id: string) {
     try {
-      const response = await axiosFetchApi.post("/favorite/add/", { id });
+      await axiosFetchApi.post("/favorite/add/", { id });
       return true;
     } catch(e) {
       return false;
@@ -90,7 +91,7 @@ export function MoviesFavoritesContextProvider({ children }: MoviesFavoritesCont
 
   async function deleteMovieInFavorites(id: string, page: number) {
     try {
-      const response = await axiosFetchApi.delete(`/favorite/drop/${id}`);
+      await axiosFetchApi.delete(`/favorite/drop/${id}`);
       await getAllMoviesFavorites(page);
       return true;
     } catch(e) {

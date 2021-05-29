@@ -114,4 +114,12 @@ export const ScreenContentContainer = styled.article`
   grid-template-columns: repeat(3, 1fr);
   justify-content: center;
   grid-gap: 30px;
+
+  @media screen and (max-width: 980px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media screen and (max-width: 660px) {
+    grid-template-columns: 1fr;
+  }
 `;

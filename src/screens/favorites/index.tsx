@@ -89,7 +89,7 @@ export function Favorites() {
 
       <ScreenContent style={{
         display: moviesFavoritesData.data.length > 0 ? "flex" : "none",
-        top: (isOpenModalFavoritesInfos || isFavoritesLoading) ? "100vh" : "100px"
+        top: (isOpenModalFavoritesInfos || isFavoritesLoading) ? "100vh" : "180px"
       }}>
         <Container>
           <ScreenContentContainer>

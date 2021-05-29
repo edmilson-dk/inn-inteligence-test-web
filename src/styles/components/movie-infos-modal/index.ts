@@ -10,6 +10,7 @@ export const MovieInfosModalWrapper = styled.section`
   position: absolute;
   top: 0;  
   bottom: 0;
+  padding: 0 10px;
 `;
 
 export const MovieInfosModalContent = styled.article`
@@ -36,7 +37,7 @@ export const MovieInfosModalContent = styled.article`
     &:hover {
       opacity: 0.7;
     }
-    
+
     > span svg {
       width: 30px;
       height: 30px;
@@ -70,7 +71,7 @@ export const MovieInfosModalContent = styled.article`
   }
 
   > section article {
-    max-width: 90%;
+    max-width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -112,6 +113,46 @@ export const MovieInfosModalContent = styled.article`
       color: ${({ theme }) => theme.colors.white};
       font-size: 0.9rem;
       font-weight: 500;
+    }
+  }
+
+  @media screen and (max-width: 870px) {
+    max-width: 720px;
+  }
+
+  @media screen and (max-width: 800px) {
+    max-width: 660px;
+    max-height: 600px;
+
+    > header {
+      height: 100%;
+      max-height: 100%;
+      overflow: hidden;
+    }
+
+    > header img {
+      height: 100%;
+    }
+  }
+
+  @media screen and (max-width: 720px) {
+    grid-template-columns: 1fr;
+    overflow-y: scroll;
+    z-index: 99999;
+    max-width: 420px;
+    top: 30px;
+
+    > header img {
+      height: 444px;
+    }
+
+    > button#btn-close-modal { 
+      top: 20px;
+      right: 20px;
+    }
+
+    > section {
+      padding: 1rem;
     }
   }
 `;
