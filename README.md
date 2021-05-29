@@ -1,46 +1,107 @@
-# Getting Started with Create React App
+# Movix
+<p align="center">
+  <img src="https://img.shields.io/static/v1?label=Movix&message=Welcome&color=FFFFFF&labelColor=893bc8" alt="PRs welcome!" />
+  <img alt="License" src="https://img.shields.io/static/v1?label=version&message=1.0&color=FFFFFF&labelColor=893bc8">
+  <img alt="License" src="https://img.shields.io/static/v1?label=license&message=MIT&color=FFFFFF&labelColor=893bc8">
+  <img alt="Stars" src="https://img.shields.io/github/stars/edmilson-dk/inn-inteligence-test-web?color=FFFFFF&labelColor=893bc8">
+  <img alt="Languages" src="https://img.shields.io/github/languages/count/edmilson-dk/inn-inteligence-test-web?color=FFFFFF&labelColor=893bc8">
+</p>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+O Movix é uma simples pltaforma para busca de filmes, series e episodios, projeto desenvolvido como teste para vaga de desenvolvedor junior na Innovation Inteligence.
 
-## Available Scripts
+# Tópicos 
 
-In the project directory, you can run:
+- [Tecologias](#techs)
+- [Check-list](#chech)
+- [Layout](#layout)
+- [Rodando local](#execute)
+- [Página online](#online)
+- [Licença](#license)
 
-### `yarn start`
+<a id="techs"></a>
+## Tecnologias e bibliotecas utilizadas
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- [ReactJS](https://pt-br.reactjs.org/)
+- [Styled Components](https://styled-components.com/)
+- [TypeScript](https://www.typescriptlang.org/)
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+<a id="check"></a>
+### Check List
 
-### `yarn test`
+__OBS__: As pesquisas devem ser feitas em inglês, pois a API é em inglês
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- [x] Responsividade
+- [x] Busca de filmes
+- [x] Busca de series
+- [x] Busca de episodios
+- [x] Filtros para (movies, series, episodes)
+- [x] Listagem de resultados da pesquisa
+- [x] Listagem, remoção e adição de favoritos
+- [x] Listagem detalhada das informações
+- [x] Páginação de dados
 
-### `yarn build`
+<a id="layout"></a>
+## Layout
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Home page
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+![Home page](https://tlgur.com/d/4x567MJ8)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+![Home page](https://tlgur.com/d/4x567qY8)
 
-### `yarn eject`
+### Favorites page
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+![Favorites page](https://tlgur.com/d/g57o05m8)
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Movie infos modal 
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+![Movies infos](https://tlgur.com/d/8e0ekwB4)
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+<a id="execute"></a>
+## Executando o projeto
 
-## Learn More
+Para executar o projeto em sua máquina siga os passos abaixo.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- 1 Clone meu repositório em sua máquina 
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```sh
+git clone git@github.com:edmilson-dk/inn-inteligence-test-web.git
+
+# entre na pasta
+
+cd inn-inteligence-test-web
+```
+
+- 2 Após o passo acima, instale as dependências necessárias, para isso é preciso que você tenha o [NodeJS](https://nodejs.org/en/) instalado em sua máquina.
+
+```sh
+npm install
+
+# ou com yarn
+
+yarn install
+```
+
+- 4 Feito isso é hora de executar o projeto, para isso execute o comando abaixo.
+
+```sh
+npm start 
+
+# ou com yarn
+
+yarn start
+```
+
+<a id="online"></a>
+## Veja a aplicação funcionando
+
+Caso você não queira executar os passos de instalação manualmente, para sua sorte fiz o deploy da aplicação, e você pode testa ela no link abaixo.
+
+[Aplicação aqui](https://inn-inteligence-test-web.vercel.app/)
+
+<a id="license"></a>
+## 🤝 Licença
+
+[MIT](https://github.com/edmilson-dk/inn-inteligence-test-web/blob/main/LICENSE) Project License
+
+Creator with 💙 by [Edmilson Jesus](https://www.linkedin.com/in/edmilson-jesus-4128711b5)
