@@ -11,7 +11,6 @@ export type MoviePreviewDataApiResponseSuccess = {
   total: number;
 }
 
-
 export type MoviePreviewDataApiResponse = MoviePreviewDataApiResponseSuccess | null;
 
 export type MovieInfosDataApiResponse = {
@@ -28,4 +27,9 @@ export type MovieInfosDataApiResponse = {
   poster: string;
   id: string;
   type: string;
+}
+
+export type MoviesFavoritesAllDataResponse = {
+  data: MovieInfosDataApiResponse[],
+  total: number;
 }
