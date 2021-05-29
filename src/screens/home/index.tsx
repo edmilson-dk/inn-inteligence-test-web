@@ -65,7 +65,7 @@ export function Home() {
           <HomeContainer>
             <h1 className="flex-center">
               Movix
-            <span>
+              <span>
                 <FiSearch size="100%" />
               </span>
             </h1>
@@ -77,7 +77,13 @@ export function Home() {
                 </span>
               </button>
             </form>
-            <MovieFilterData  setMovieType={setType} setMovieYear={setYear}/>
+            { 
+              moviesDataPreview.length > 0 && (
+                <MovieFilterData 
+                  setMovieType={setType} 
+                  setMovieYear={setYear}
+                />)
+            }
           </HomeContainer>
         </Container>
       </HomeWrapper>
