@@ -1,4 +1,5 @@
 import { MovieContextProvider } from "./contexts/movie-context";
+import { MoviesFavoritesContextProvider } from "./contexts/movies-favorites-context";
 import { Routes } from "./routes";
 import { CustomThemeProvider } from "./styles";
 import { GlobalsStyles } from "./styles/globals";
@@ -8,7 +9,9 @@ function App() {
     <CustomThemeProvider>
       <GlobalsStyles />
       <MovieContextProvider>
-        <Routes />
+        <MoviesFavoritesContextProvider>
+          <Routes />
+        </MoviesFavoritesContextProvider>
       </MovieContextProvider>
     </CustomThemeProvider>
   );
