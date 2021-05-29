@@ -10,7 +10,7 @@ const MovieContext = createContext({} as MovieContextProps);
 export function MovieContextProvider({ children }: MovieContextProviderProps) {
   const searchInputRef = useRef<HTMLInputElement>(null);
   const [moviesDataPreview, setMoviesDataPreview] = useState([] as MoviePreviewData[]);
-  const [moviesPreviewTotal, setmoviesPreviewTotal] = useState(0);
+  const [moviesPreviewTotal, setMoviesPreviewTotal] = useState(0);
   const [moviesDataInfos, setMoviesDataInfos] = useState({} as MovieInfosDataApiResponse);
   const [isLoading, setIsLoading] = useState(false);
   const [isNotFoundMovie, setIsNotFoundMovie] = useState(false);
@@ -71,7 +71,7 @@ export function MovieContextProvider({ children }: MovieContextProviderProps) {
         }
 
         setMoviesDataPreview(response.data.data);
-        setmoviesPreviewTotal(response.data.total);
+        setMoviesPreviewTotal(response.data.total);
       } else {
         alert("The search must have at least two characters");
       }
@@ -104,7 +104,7 @@ export function MovieContextProvider({ children }: MovieContextProviderProps) {
         }
 
         setMoviesDataPreview(response.data.data);
-        setmoviesPreviewTotal(response.data.total);
+        setMoviesPreviewTotal(response.data.total);
       } else {
         alert("The search must have at least two characters");
       }
@@ -125,7 +125,8 @@ export function MovieContextProvider({ children }: MovieContextProviderProps) {
       isOpenModalInfos,
       searchInputRef,
       moviesPreviewTotal,
-      searchAllMoviesWithQuery
+      searchAllMoviesWithQuery,
+      setMoviesDataPreview
     }}>
       { children}
     </MovieContext.Provider>
@@ -133,6 +134,6 @@ export function MovieContextProvider({ children }: MovieContextProviderProps) {
 }
 
 export function useMovieContext() {
-  const data = useContext(MovieContext);
-  return data;
+  const context = useContext(MovieContext);
+  return context;
 }
