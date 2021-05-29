@@ -49,13 +49,13 @@ export function MovieContextProvider({ children }: MovieContextProviderProps) {
         const response = await axiosFetchApi.get<MoviePreviewDataApiResponse>(
           "/search/all",
           {
-            params: { 
+            params: {
               title: title.trimEnd().trimStart(),
               page, type, year
             },
           }
         );
-        
+
         if (response.data && response.data.data.length > 0) {
           setIsLoading(false);
           setIsNotFoundMovie(false);
@@ -69,7 +69,7 @@ export function MovieContextProvider({ children }: MovieContextProviderProps) {
       } else {
         alert("The search must have at least two characters");
       }
-    } catch(e) {
+    } catch (e) {
       notFoundMoviePreviewSetStates();
     }
   }
@@ -88,7 +88,7 @@ export function MovieContextProvider({ children }: MovieContextProviderProps) {
             params: { title: searchInputRef.current.value.trimEnd().trimStart() },
           }
         );
-        
+
         if (response.data && response.data.data.length > 0) {
           toTopAndAddNotScroll(false);
           notFoundMoviePreviewSetStates();
@@ -102,7 +102,7 @@ export function MovieContextProvider({ children }: MovieContextProviderProps) {
       } else {
         alert("The search must have at least two characters");
       }
-    } catch(e) {
+    } catch (e) {
       notFoundMoviePreviewSetStates();
     }
   }
@@ -121,7 +121,7 @@ export function MovieContextProvider({ children }: MovieContextProviderProps) {
       moviesPreviewTotal,
       searchAllMoviesWithQuery
     }}>
-      { children }
+      { children}
     </MovieContext.Provider>
   )
 }

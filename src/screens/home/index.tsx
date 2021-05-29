@@ -31,14 +31,14 @@ export function Home() {
 
   async function handlerNextDataClick() {
     const title = searchInputRef.current ? searchInputRef.current.value : "";
-    const page = actualPage+1;
+    const page = actualPage + 1;
     await searchAllMoviesWithQuery(page, type, title, 0);
     setActualPage(page);
   }
 
   async function handlerPrevDataClick() {
     const title = searchInputRef.current ? searchInputRef.current.value : "";
-    const page = actualPage -1;
+    const page = actualPage - 1;
     await searchAllMoviesWithQuery(page, type, title, 0);
     setActualPage(page);
   }
@@ -77,10 +77,10 @@ export function Home() {
                 </span>
               </button>
             </form>
-            { 
+            {
               moviesDataPreview.length > 0 && (
-                <MovieFilterData 
-                  setMovieType={setType} 
+                <MovieFilterData
+                  setMovieType={setType}
                   setMovieYear={setYear}
                 />)
             }
@@ -93,15 +93,15 @@ export function Home() {
       {isNotFoundMovie && (<h2 className="not-found-movie">Nothing found</h2>)}
 
       {(isOpenModalInfos && moviesDataInfos.title) && (
-        <MovieInfosModal 
-          closeModalClick={handleCloseModal} 
+        <MovieInfosModal
+          closeModalClick={handleCloseModal}
           data={moviesDataInfos}
         />
       )}
 
-      <HomeContent style={{ 
+      <HomeContent style={{
         display: moviesDataPreview.length > 0 ? "flex" : "none",
-        top: ( isOpenModalInfos || isLoading ) ? "100vh" : "calc(100vh - 100px)",
+        top: (isOpenModalInfos || isLoading) ? "100vh" : "calc(100vh - 100px)",
       }}>
         <Container>
           <HomeContentContainer>
@@ -113,7 +113,7 @@ export function Home() {
           </HomeContentContainer>
           {
             moviesDataPreview.length > 0 && (
-              <MovieDataPaginate 
+              <MovieDataPaginate
                 nextCbFetch={handlerNextDataClick}
                 prevCbFetch={handlerPrevDataClick}
                 prevDisabled={actualPage === 1}

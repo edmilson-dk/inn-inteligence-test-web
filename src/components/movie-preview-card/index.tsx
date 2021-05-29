@@ -8,8 +8,8 @@ export function MoviePreviewCard({ data, displayInfosClick }: MoviePreviewCardPr
   return (
     <MoviePreviewCardWrapper>
       <header onClick={() => displayInfosClick(data.id)}>
-        <img 
-          src={data.poster === "N/A" ? BannerNotFoundPng : data.poster} 
+        <img
+          src={data.poster === "N/A" ? BannerNotFoundPng : data.poster}
           alt={data.poster === "N/A" ? "https://br.freepik.com/vetores/abstrato" : "Movie banner"}
         />
       </header>
