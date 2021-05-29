@@ -1,7 +1,9 @@
-import { MovieInfosModalProps } from "./types";
-import BannerNotFoundPng from "src/assets/banner-notfound.png";
-import { MovieInfosModalWrapper, MovieInfosModalContent } from "src/styles/components/movie-infos-modal";
 import { FiX } from "react-icons/fi";
+
+import BannerNotFoundPng from "src/assets/banner-notfound.png";
+
+import { MovieInfosModalProps } from "./types";
+import { MovieInfosModalWrapper, MovieInfosModalContent } from "src/styles/components/movie-infos-modal";
 
 export function MovieInfosModal({ data, closeModalClick }: MovieInfosModalProps) {
   const gender = data.genre.trim().split(",");
@@ -18,7 +20,7 @@ export function MovieInfosModal({ data, closeModalClick }: MovieInfosModalProps)
       <MovieInfosModalContent>
         <button onClick={closeModalClick} id="btn-close-modal">
           <span>
-            <FiX size="100%"/>
+            <FiX size="100%" />
           </span>
         </button>
         <header id="header">
