@@ -27,6 +27,12 @@ export function MovieContextProvider({ children }: MovieContextProviderProps) {
     setMoviesDataPreview([]);
   }
 
+  function foundMoviePreviewSetStates() {
+    setIsLoading(false);
+    setIsNotFoundMovie(false);
+    toTopAndAddNotScroll(false);
+  }
+
   async function handleSearchOneMovieInfos(id: string) {
     setIsLoading(true);
     toTopAndAddNotScroll(true, true);
@@ -45,6 +51,7 @@ export function MovieContextProvider({ children }: MovieContextProviderProps) {
     try {
       if (title && title.length >= 2) {
         setIsLoading(true);
+        toTopAndAddNotScroll(true);
 
         const response = await axiosFetchApi.get<MoviePreviewDataApiResponse>(
           "/search/all",
@@ -57,8 +64,7 @@ export function MovieContextProvider({ children }: MovieContextProviderProps) {
         );
 
         if (response.data && response.data.data.length > 0) {
-          setIsLoading(false);
-          setIsNotFoundMovie(false);
+          foundMoviePreviewSetStates()
         } else {
           notFoundMoviePreviewSetStates();
           return;
@@ -71,6 +77,7 @@ export function MovieContextProvider({ children }: MovieContextProviderProps) {
       }
     } catch (e) {
       notFoundMoviePreviewSetStates();
+      return;
     }
   }
 
@@ -90,8 +97,7 @@ export function MovieContextProvider({ children }: MovieContextProviderProps) {
         );
 
         if (response.data && response.data.data.length > 0) {
-          toTopAndAddNotScroll(false);
-          notFoundMoviePreviewSetStates();
+          foundMoviePreviewSetStates()
         } else {
           notFoundMoviePreviewSetStates();
           return;
