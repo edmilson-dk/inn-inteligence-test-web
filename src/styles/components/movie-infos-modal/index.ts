@@ -33,6 +33,10 @@ export const MovieInfosModalContent = styled.article`
     position: absolute;
     font-size: 0;
 
+    &:hover {
+      opacity: 0.7;
+    }
+    
     > span svg {
       width: 30px;
       height: 30px;
