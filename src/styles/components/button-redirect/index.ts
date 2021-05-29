@@ -6,6 +6,7 @@ export const ButtonRedirectWrapper = styled.button`
   border-radius: 10px;
   background-color: ${({ theme }) => theme.colors.primary};
   letter-spacing: 1px;
+  z-index: 999;
 
   font-size: 1.375rem;
   line-height: 1;
