@@ -1,6 +1,8 @@
-import { MoviePreviewData } from "src/types/api-response-types";
+import { ReactNode } from "react";
 
 export type MoviePreviewCardProps = {
-  data: MoviePreviewData;
+  data: any;
   displayInfosClick: (id: string) => void;
+  buttonIcon: ReactNode;
+  buttonActionClick: () => void;
 }
