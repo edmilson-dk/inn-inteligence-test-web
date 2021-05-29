@@ -1,5 +1,6 @@
-import { RefObject, ReactNode, FormEvent } from "react";
-import { MovieInfosDataApiResponse, MoviePreviewData, MoviePreviewDataApiResponse } from "src/types/api-response-types";
+import { RefObject, ReactNode, FormEvent, Dispatch, SetStateAction } from "react";
+
+import { MovieInfosDataApiResponse, MoviePreviewData } from "src/types/api-response-types";
 
 export type MovieContextProps = {
   handleSearchAllMovies: (e: FormEvent) => void;
@@ -11,6 +12,7 @@ export type MovieContextProps = {
   isOpenModalInfos: boolean;
   moviesDataInfos: MovieInfosDataApiResponse;
   moviesDataPreview: MoviePreviewData[];
+  setMoviesDataPreview: Dispatch<SetStateAction<MoviePreviewData[]>>
   handleSearchOneMovieInfos: (id: string) => void;
   moviesPreviewTotal: number;
 }
